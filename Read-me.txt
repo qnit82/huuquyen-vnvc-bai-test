@@ -52,6 +52,9 @@ II. Source Web front-end React-JS.
 - Và chạy npm start để chạy.
 
 ** Trong bài tập này Quyền cũng có triển khai SignalR để  real time khi có người đặt trên 1 SLot, thì tất cả mọi người sẽ thấy số lượng Bet tăng lên.
+** Quyền chưa kịp làm phần Monitoring này nhé các anh.
+Triển khai monitoring: Hãy thiết lập hệ thống monitoring cơ bản đo lường số lượng người dùng sử dụng app xổ số.
+
 
 End.
 Trân trọng.
