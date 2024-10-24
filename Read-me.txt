@@ -9,7 +9,7 @@ Dear các anh: đây là phần hướng dẫn Build source chạy API nhé.
 
 I. Source API là folder: rooster-lottery
 1. IDE Visual studio 2022 Enterprise
-2. Nền tảng .Net core 6
+2. Nền tảng .Net core 6.
 3. Xây dựng theo cấu trúc Repository pattern và Unit of work.
 4. Database (Microsoft SQL Server 2022 (RTM) - 16.0.1000.6 (X64))
 
@@ -50,6 +50,8 @@ II. Source Web front-end React-JS.
 - Là thư mục: rooster-lottery-web
 - Các anh clone trên github về: cd vào rooster-lottery-web -> chạy npm install để cài package
 - Và chạy npm start để chạy.
+
+** Trong bài tập này Quyền cũng có triển khai SignalR để  real time khi có người đặt trên 1 SLot, thì tất cả mọi người sẽ thấy số lượng Bet tăng lên.
 
 End.
 Trân trọng.
