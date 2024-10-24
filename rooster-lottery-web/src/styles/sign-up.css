@@ -1,0 +1,78 @@
+.sign-up-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+.sign-up-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.logo {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.signup-form {
+    margin-top: 20px;
+}
+
+.signup-form .ant-form-item {
+    margin-bottom: 15px;
+}
+
+.login-form-button {
+    width: 100%;
+    background-color: #1890ff;
+    border-color: #1890ff;
+    height: 40px;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+p a {
+    color: #1890ff;
+}
+
+.signup-form Input {
+    height: 46px;
+}
+
+.ant-picker {
+    width: 100%;
+    height: 46px;
+}
+
+.rooster-lottery{
+    color: #1890ff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.rooster-lottery.second{
+    margin-top: -15px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sign-up-card {
+        width: 70%;
+    }
+}

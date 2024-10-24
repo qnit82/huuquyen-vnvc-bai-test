@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RoosterLottery.DataEntity\RoosterLottery.DataEntity.csproj" />
+    <ProjectReference Include="..\RoosterLottery.Model\RoosterLottery.Model.csproj" />
+    <ProjectReference Include="..\RoosterLottery.Utils\RoosterLottery.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

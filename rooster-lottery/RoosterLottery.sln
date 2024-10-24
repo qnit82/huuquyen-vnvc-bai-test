@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoosterLottery.CoreApi", "RoosterLottery.CoreApi\RoosterLottery.CoreApi.csproj", "{E2FCF948-5744-496C-813E-B766821FC8FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoosterLottery.DataEntity", "RoosterLottery.DataEntity\RoosterLottery.DataEntity.csproj", "{8D8CF628-C222-4A7E-8E46-CCC59F023246}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoosterLottery.Repository", "RoosterLottery.DI\RoosterLottery.Repository.csproj", "{4DF10F21-B631-4BE4-BA8A-9A90666BA757}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoosterLottery.Utils", "RoosterLottery.Utils\RoosterLottery.Utils.csproj", "{DEFBBD00-1F52-4151-90CD-ECD59CAE3D4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoosterLottery.Model", "RoosterLottery.Model\RoosterLottery.Model.csproj", "{E603210C-18A8-4AB3-9BAC-B2EB995A0E3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoosterLottery.UnitOfWork", "RoosterLottery.UnitOfWork\RoosterLottery.UnitOfWork.csproj", "{F249D138-FAB7-44E2-B5AA-9FB7E0625AF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2FCF948-5744-496C-813E-B766821FC8FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2FCF948-5744-496C-813E-B766821FC8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2FCF948-5744-496C-813E-B766821FC8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2FCF948-5744-496C-813E-B766821FC8FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D8CF628-C222-4A7E-8E46-CCC59F023246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D8CF628-C222-4A7E-8E46-CCC59F023246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D8CF628-C222-4A7E-8E46-CCC59F023246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D8CF628-C222-4A7E-8E46-CCC59F023246}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF10F21-B631-4BE4-BA8A-9A90666BA757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF10F21-B631-4BE4-BA8A-9A90666BA757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF10F21-B631-4BE4-BA8A-9A90666BA757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF10F21-B631-4BE4-BA8A-9A90666BA757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEFBBD00-1F52-4151-90CD-ECD59CAE3D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEFBBD00-1F52-4151-90CD-ECD59CAE3D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEFBBD00-1F52-4151-90CD-ECD59CAE3D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEFBBD00-1F52-4151-90CD-ECD59CAE3D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E603210C-18A8-4AB3-9BAC-B2EB995A0E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E603210C-18A8-4AB3-9BAC-B2EB995A0E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E603210C-18A8-4AB3-9BAC-B2EB995A0E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E603210C-18A8-4AB3-9BAC-B2EB995A0E3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F249D138-FAB7-44E2-B5AA-9FB7E0625AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F249D138-FAB7-44E2-B5AA-9FB7E0625AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F249D138-FAB7-44E2-B5AA-9FB7E0625AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F249D138-FAB7-44E2-B5AA-9FB7E0625AF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {194CED98-9ACA-4F2F-BACB-3A35A223BA3A}
+	EndGlobalSection
+EndGlobal

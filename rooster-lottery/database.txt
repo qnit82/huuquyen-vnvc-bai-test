@@ -1,0 +1,53 @@
+﻿Dưới đây là một thiết kế cơ sở dữ liệu phù hợp cho app xổ số của "Công ty xổ số kiến thiết Con Gà Trống":
+
+### 1. **Bảng `Users`** (Thông tin người dùng)
+Chứa thông tin về người dùng đã đăng ký sử dụng ứng dụng.
+
+| Trường              | Kiểu dữ liệu        | Mô tả                              |
+|---------------------|---------------------|------------------------------------|
+| `user_id`           | INT (PK, Auto Increment) | ID duy nhất cho mỗi người dùng.     |
+| `name`              | VARCHAR(255)        | Tên người dùng.                   |
+| `dob`               | DATE                | Ngày tháng năm sinh của người dùng.|
+| `phone_number`      | VARCHAR(15)         | Số điện thoại của người dùng.      |
+| `created_at`        | DATETIME            | Thời gian tạo tài khoản.           |
+
+### 2. **Bảng `Slots`** (Kết quả quay số của các slot)
+Chứa kết quả số mở của mỗi slot trong ngày.
+
+| Trường              | Kiểu dữ liệu        | Mô tả                              |
+|---------------------|---------------------|------------------------------------|
+| `slot_id`           | INT (PK, Auto Increment) | ID duy nhất cho mỗi slot quay số.  |
+| `slot_time`         | DATETIME            | Thời gian quay số (đầu mỗi giờ).   |
+| `result_number`     | INT                 | Số quay ra trong slot (0-9).       |
+
+### 3. **Bảng `Bets`** (Đặt cược của người dùng)
+Chứa thông tin về số người dùng đã đặt cược cho các slot.
+
+| Trường              | Kiểu dữ liệu        | Mô tả                              |
+|---------------------|---------------------|------------------------------------|
+| `bet_id`            | INT (PK, Auto Increment) | ID duy nhất cho mỗi lần đặt cược.  |
+| `user_id`           | INT (FK to `Users.user_id`) | ID người dùng đã đặt cược.         |
+| `slot_id`           | INT (FK to `Slots.slot_id`) | ID của slot người dùng đặt cược.   |
+| `bet_number`        | INT                 | Số mà người dùng đã đặt cược (0-9).|
+| `bet_time`          | DATETIME            | Thời gian đặt cược.                |
+
+### 4. **Bảng `Bet_Results`** (Kết quả cược của người dùng)
+Chứa thông tin về kết quả cược của người dùng sau khi slot quay số xong.
+
+| Trường              | Kiểu dữ liệu        | Mô tả                              |
+|---------------------|---------------------|------------------------------------|
+| `bet_result_id`     | INT (PK, Auto Increment) | ID duy nhất cho kết quả đặt cược. |
+| `bet_id`            | INT (FK to `Bets.bet_id`) | ID đặt cược của người dùng.       |
+| `is_winner`         | BOOLEAN             | Người dùng có thắng không (true/false).|
+
+### Quan hệ giữa các bảng:
+- **`Users`** 1-N **`Bets`**: Một người dùng có thể đặt nhiều cược.
+- **`Slots`** 1-N **`Bets`**: Một slot có thể có nhiều cược của nhiều người dùng.
+- **`Bets`** 1-1 **`Bet_Results`**: Mỗi lần đặt cược sẽ có kết quả (thắng hoặc thua).
+
+### Lưu ý thêm:
+- **Bảng `Slots`** sẽ được hệ thống cập nhật kết quả quay số sau mỗi giờ.
+- Người dùng chỉ có thể đặt cược cho slot sẽ mở trong khoảng từ 1 phút đến 60 phút sau khi đặt cược.
+- Nếu người dùng đã đăng ký thông tin, chỉ cần nhập số điện thoại, hệ thống sẽ truy xuất thông tin đã có.
+
+Thiết kế này có thể được triển khai với nhiều công nghệ cơ sở dữ liệu như MySQL, PostgreSQL, hoặc MongoDB tùy thuộc vào yêu cầu ứng dụng.

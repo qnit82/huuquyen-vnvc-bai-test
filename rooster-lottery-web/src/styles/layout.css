@@ -1,0 +1,105 @@
+.layout-container {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.header {
+    background-color: #cf212a;
+    display: flex;
+    justify-content: center;
+    padding: 0 30px;
+  }
+
+.logo-image {
+    width: 40px;
+    margin-right: 20px;
+}
+
+.menu {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+.menu .ant-menu-item {
+    color: white;
+    font-weight: bold;
+    padding: 0 20px;
+}
+
+.menu .ant-menu-item:hover, 
+.menu .ant-menu-item-selected {
+    color: #ffecb3;
+}
+
+.content {
+    width: 60%; 
+    margin: 0 auto;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    color: #cf212a;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.collapse-container {
+    width: 100%;
+}
+
+.collapse-container .ant-collapse-item {
+    background-color: white;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.collapse-container .ant-collapse-header {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapse-container .ant-collapse-content {
+    background-color: #fafafa;
+}
+
+.collapse-container .ant-collapse-header:hover {
+    color: #cf212a;
+}
+
+.collapse-container .ant-collapse-header .anticon {
+    font-size: 18px;
+}
+
+.collapse-container .ant-collapse-item:last-child {
+    border-bottom: none;
+}
+
+.collapse-container p {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.footer {
+    text-align: center;
+    background-color: #001529;
+    color: #fff;
+    padding: 20px 50px;
+}
+
+.center-text {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    .content {
+        width: 90%;
+        padding: 20px;
+    }
+    
+  }

@@ -1,0 +1,55 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++ Nguyễn Hữu Quyền - nộp bài test +++++++++++++++++++++++++
++++++++++++++++++++++++++++ SĐT: 0908055786 +++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++ EMAIL: zizou.hatinh@gmail.com +++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Dear các anh: đây là phần hướng dẫn Build source chạy API nhé.
+** Có 2 bộ source (1 cho API, 1 Cho Front-end web với React-JS)
+
+I. Source API là folder: rooster-lottery
+1. IDE Visual studio 2022 Enterprise
+2. Nền tảng .Net core 6
+3. Xây dựng theo cấu trúc Repository pattern và Unit of work.
+4. Database (Microsoft SQL Server 2022 (RTM) - 16.0.1000.6 (X64))
+
+I. Build API.
+1. Chạy SQL Script để tạo database: bên trong thư mục Database
+- Mở trên Visual studio bằng file: RoosterLottery.sln
+- Cấu hình Connection string cho database trong file appsettings.json: ("rooster-lottery/RoosterLottery.CoreApi/appsettings.json")
+- File RoosterLotteryDb.sql là database chính
+- File RoosterLotteryDbHangfire.sql là database hangfire workers
+- Vì là ứng dụng xổ số, nên Quyền có sử dụng Workers để xử lý tác vụ chạy nền như sau.
+	+ Cấu hình file  SlotCreationService.cs bên trong thư mục (rooster-lottery/RoosterLottery.UnitOfWork/WorkerService/SlotCreationService.cs)
+	- Có 2 workers
+	1. Là create-slot-next-time : Ở đây Quyền để */5 * * * * là 5 phút chạy 1 lần (để Quyền test cho nó tự động tạo Slot)
+	- Cứ 5 phút nó chạy 1 lần để kiểm tra giờ tiếp theo có Slot chưa (nếu đã tạo rồi nó sẽ bỏ qua), nếu chưa có nó sẽ tạo slot cho giờ đó: ví dụ, trước 01:00 nó sẽ tạo 1 Slot cho 1:00, trước 2:00 nó sẽ tạo cho 2:00
+	2. Là spin-slot: Ở đây Quyền để */5 * * * * là 5 phút chạy 1 lần (để Quyền test tự động quay thưởng)
+	- Ví dụ sau 1:00 nó sẽ quay cho Slot 1:00, sau 2:00 nó sẽ quay cho Slot 2:00
+	
+	/// <summary>
+	/// * * * * * = every minute of every hour of every day of every month of every year
+	/// </summary>
+	protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+	{
+		RecurringJob.AddOrUpdate("create-slot-next-time", () => CreateSlotForNextTime(), "*/2 * * * *");
+		//RecurringJob.RemoveIfExists("spin-slot");
+		RecurringJob.AddOrUpdate("spin-slot", () => SpinSlotToDay(), "*/5 * * * *");
+		await Task.CompletedTask;
+	}
+	
+- Nhấp phải chuột trên project RoosterLottery.CoreApi chọn Set as statup project và nhấn Ctrl + F5 để Build chạy.
+- Xem Monitoring Workers này trên http://localhost:5217/hangfire
+- Xem API trên swagger http://localhost:5217/swagger/index.html
+*** Vì Quyền đang để port 5217.
+
+- Trên file Program.cs trong thư mục ("rooster-lottery/RoosterLottery.CoreApi/Program.cs")
+set builder.WithOrigins("http://localhost:3000") để cho phép bên Web front-end gọi qua, vì front Quyền start trên port http://localhost:3000
+
+II. Source Web front-end React-JS.
+- Là thư mục: rooster-lottery-web
+- Các anh clone trên github về: cd vào rooster-lottery-web -> chạy npm install để cài package
+- Và chạy npm start để chạy.
+
+End.
+Trân trọng.
